@@ -11,8 +11,7 @@ class Defense:
         self._register_alias('Filter', self.filter_based)
         self._register_alias('Detector', self.detector_based)
         self.tokenizer = AutoTokenizer.from_pretrained('meta-llama/Llama-2-7b-chat-hf')
-        self.model = AutoModelForCausalLM.from_pretrained('meta-llama/Llama-2-7b-chat-hf', device_map="auto", load_in_4bit=True, bnb_4bit_compute_dtype=torch.float16).eval()
-
+        self.model = AutoModelForCausalLM.from_pretrained('facebook/opt-125m').to(torch.device("cpu")).eval()
 
     def _register_alias(self, name, creator):
         self._creator[name] = creator
