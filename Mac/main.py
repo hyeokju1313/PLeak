@@ -9,6 +9,8 @@ from collections import OrderedDict
 import os
 from DataFactory import DataFactory
 import sys
+from huggingface_hub import login
+login(token="hf_")
 
 random.seed(0)
 np.random.seed(0)
@@ -35,7 +37,7 @@ torch.cuda.empty_cache()
 
 sampler = Sampler(target_model=target_model, template=testset.template)
 results = sampler.sample_sequence(testset, triggers=triggers)
-Sampler.save_to_csv(f'results/{dataset}_{token_length}_{target_model}_{model}_{train_num}.csv', results, triggers)
+Sampler.save_to_csv(f'results/{dataset}_{token_length}_{target_model}_{shadow_model}_{train_num}.csv', results, triggers)
 
 sampler.evaluate(results, level='substring')
 sampler.evaluate(results, level='em')
