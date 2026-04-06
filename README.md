@@ -44,21 +44,7 @@
 
 ## Semantic Similarity
   ---                                                                        
-  PLeak Semantic Similarity 평가 방식                                                                                   
-                                                                                                                        
-  전체 흐름                                                                                                             
-                                                                                                                        
-  입력 문장 (예측 / 정답)
-          ↓                                                                                                             
-  SentenceTransformer 인코딩
-  (all-MiniLM-L6-v2)                                                                                                  
-          ↓                                                                                                             
-  임베딩 벡터 생성
-          ↓                                                                                                             
-  코사인 유사도 계산
-          ↓                                                                                                             
-  평균 / 표준편차 출력
-                                                                                                                        
+  PLeak Semantic Similarity 평가 방식                                                                                            
   ---             
   Step 1 — 입력 데이터 구성
                                                                                                                         
