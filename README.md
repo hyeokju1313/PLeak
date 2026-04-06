@@ -65,8 +65,8 @@
   results는 {context(정답), trigger(예측)} 형태의 딕셔너리 리스트입니다.
                                                                                                                         
   keys = list(results[0].keys())
-  # keys[0] = "context"  → 정답 문장 (target)                                                                           
-  # keys[1] = trigger    → 모델이 생성한 예측 문장 (prediction)                                                         
+  keys[0] = "context"  → 정답 문장 (target)                                                                           
+  keys[1] = trigger    → 모델이 생성한 예측 문장 (prediction)                                                         
                                                                                                                         
   ---                                                                                                                   
   Step 2 — 문장 임베딩                                                                                                  
