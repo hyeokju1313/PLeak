@@ -73,7 +73,7 @@
   - $R$: 정답 문장 (Reference)
   - $\text{Encode}(\cdot)$: 384차원 밀집 벡터로 변환                                                                    
                                                                                                                         
-  ▎ Exact Match / Substring과 달리 알파벳 필터링(filter_tokens) 없이 원문 그대로 사용합니다.                            
+  Exact Match / Substring과 달리 알파벳 필터링(filter_tokens) 없이 원문 그대로 사용합니다.                            
                                                                                                                         
   ---                                                                                                                   
   Step 3 — 코사인 유사도 계산
