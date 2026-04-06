@@ -1,12 +1,7 @@
 # PLEAK: Prompt Leaking Attacks against Large Language Model Applications
 This is official implementation of PLEAK: Prompt Leaking Attacks against Large Language Model Applications.
 ## Requirements
-+ python 3.10
-+ pytorch 2.0.1
-+ torchmetrics 0.11.4
-+ torchtext 0.15.2
-+ torchvision 6.3.2
-+ transformers 4.32.1
++ requirments.txt
 
 ## Code Usage
 Attack.py is the implementaion of Attack and Sampler.py is to simulate the process how LLMs generate response for user.
@@ -16,7 +11,7 @@ Attack.py is the implementaion of Attack and Sampler.py is to simulate the proce
 ```bash
 python main.py {dataset} {AQ length} {shadow model} {target model} {shadow dataset size}
 # Here is an example to use the code: 
-# python main.py Financial 12 llama llama 16
+# python main.py Financial 4 opt opt 2
 ```
 
 ### Generate responses for AQs without defense
