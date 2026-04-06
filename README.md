@@ -1,6 +1,6 @@
 # PLeak
 
-##### mkdir results
+##### before running code >>> mkdir results
 
 ## Extended Edit Distance
   ---                                                                                                                   
