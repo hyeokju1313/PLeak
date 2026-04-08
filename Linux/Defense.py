@@ -10,10 +10,19 @@ class Defense:
         self._register_alias('None', self.no_defense)
         self._register_alias('Filter', self.filter_based)
         self._register_alias('Detector', self.detector_based)
+        quantization_config = BitsAndBytesConfig(
+            load_in_4bit=True,
+            bnb_4bit_compute_dtype=torch.float16,
+            bnb_4bit_use_double_quant=True,
+            bnb_4bit_quant_type="nf4"
+        )
         self.tokenizer = AutoTokenizer.from_pretrained('meta-llama/Llama-2-7b-chat-hf')
-        self.model = AutoModelForCausalLM.from_pretrained('meta-llama/Llama-2-7b-chat-hf', device_map="auto", load_in_4bit=True, bnb_4bit_compute_dtype=torch.float16).eval()
-
-
+        self.model = AutoModelForCausalLM.from_pretrained(
+            'meta-llama/Llama-2-7b-chat-hf', 
+            device_map="auto", 
+            quantization_config=quantization_config
+        ).eval()
+        
     def _register_alias(self, name, creator):
         self._creator[name] = creator
 
